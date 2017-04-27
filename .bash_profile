@@ -17,3 +17,23 @@ alias lunar='ssh oakbar2@oakbarrett.com'
 alias scpbkp='scp gpbackup gpadmin@10.85.20.17:/usr/local/greenplum-db/bin'
 alias five='ssh gpadmin@172.16.139.144'
 alias scp5='scp gpbackup gpadmin@gpdb5:/usr/local/greenplum-db/bin'
+# User specific aliases and functions
+#source /home/gpadmin/gp-wlm/gp-wlm_path.sh
+
+source /usr/local/greenplum-db/greenplum_path.sh
+
+#source /usr/local/gpdb/greenplum_path.sh
+
+#source /usr/local/greenplum-cc-web/gpcc_path.sh
+
+GPPERFMONHOME=/usr/local/greenplum-cc-web
+source $GPPERFMONHOME/gpcc_path.sh
+
+export MASTER_DATA_DIRECTORY=/gpmaster/seg-1
+#export MASTER_DATA_DIRECTORY=/master/seg-1
+
+set -o vi
+export PGPORT=5432
+alias ls='ls -lG'
+alias stop='sudo shutdown -h now'
+export PS1="\033[32m\][\u@\h:\033[32m\]\w\[]\033[m\] $ "
